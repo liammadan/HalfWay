@@ -1,0 +1,160 @@
+//HALF WAY CHECK IN
+/*
+ * This is my half way check in 
+ * I currently finished the rolls system and have one round of scoring done
+ */
+
+//THINGS TO DO
+/*
+ * 
+ * Fix the ending to switch to game 2 and game 3
+ * Print out all the points from all games added up
+ * Put in a you win vs you lose
+ */
+
+/**
+ * A program that runs the game yahtzee
+ *
+ * @Liam Madan
+ * @5/10
+ * 
+ */
+import java.util.Scanner;
+public class yahtzee
+{
+    public static void main(String[] args)
+    {
+         System.out.println("Welcome to Yahtzee! You have three games to try to get 80 points ");
+         System.out.println("Here is your first roll of game one. ");
+         
+         
+         int gameNumber = 1;
+         
+         while(gameNumber < 3)
+         {
+         Scanner in = new Scanner(System.in);
+         int[ ] rolls = new int [5];
+         rolls[0] = (int) (Math.random() * 6 + 1);
+         rolls[1] = (int) (Math.random() * 6 + 1);
+         rolls[2] = (int) (Math.random() * 6 + 1);
+         rolls[3] = (int) (Math.random() * 6 + 1);
+         rolls[4] = (int) (Math.random() * 6 + 1);
+         
+        
+         System.out.println("Your rolls are: ");
+         for(int n : rolls)
+         {
+           System.out.print(" " + n);  
+           
+         }
+         
+         System.out.println("\nWhich dice would you like to roll again? Enter 1 for die one, 2 for  die two etc.");
+         int replacedOne = in.nextInt();
+         rolls[replacedOne - 1] = (int) (Math.random() * 6 + 1);
+         System.out.println("Your rolls are: ");
+         for(int n : rolls)
+         {
+           System.out.print(" " + n);  
+           
+         }
+         System.out.println("\nWould You like to change another die? 1 for yes 2 for no");
+         int again = in.nextInt();
+         if(again == 1)
+         {
+         System.out.println("\nWhich dice would you like to roll again? Enter 1 for die one, 2 for  die two etc.");
+         int replacedTwo = in.nextInt();
+         rolls[replacedTwo- 1] = (int) (Math.random() * 6 + 1);
+         System.out.println("Your rolls are: ");
+         for(int n : rolls)
+         {
+           System.out.print(" " + n);  
+           
+         }
+         System.out.println("\nWould You like to change another die? 1 for yes 2 for no");
+         int againTwo = in.nextInt(); 
+         if (againTwo == 1)
+         {
+         System.out.println("\nWhich dice would you like to roll again? Enter 1 for die one, 2 for  die two etc.");
+         int replacedThree = in.nextInt();
+         rolls[replacedThree- 1] = (int) (Math.random() * 6 + 1);
+         System.out.println("Your rolls are: ");
+         for(int n : rolls)
+         {
+           System.out.print(" " + n);  
+           
+         }
+         System.out.println("\nYou get one more reroll if you need it! Would You like to change another die? 1 for yes 2 for no");
+         int againThree = in.nextInt();    
+         if (againThree == 1)
+         {
+             System.out.println("\nWhich dice would you like to roll again? Enter 1 for die one, 2 for  die two etc.");
+             int replacedFour = in.nextInt();
+             rolls[replacedFour- 1] = (int) (Math.random() * 6 + 1);
+             System.out.println("Your rolls are: ");
+         for(int n : rolls)
+         {
+           System.out.print(" " + n);  
+           
+         }
+         }
+         else
+         {
+             System.out.println("Your rolls are: ");
+              for(int n : rolls)
+         {
+           System.out.print(" " + n);  
+           
+         }    
+         }
+         }
+         else
+         {
+         System.out.println("Your rolls are: ");
+         for(int n : rolls)
+         {
+           System.out.print(" " + n);  
+           
+         }     
+         }
+         }
+         else
+         {
+         System.out.println("Your rolls are: ");
+         for(int n : rolls)
+         {
+           System.out.print(" " + n);  
+           
+         }     
+         }
+               
+         
+         
+         System.out.println("\nYour final rolls are: ");
+         for(int n : rolls)
+         {
+           System.out.print(" " + n);  
+           
+         }
+        
+         
+         System.out.println("\nNow check the scoring guide below ");
+         
+         System.out.println("Two pair = 15 points ");
+         System.out.println("Two of a kind = 15 points ");
+         System.out.println("Three of a kind = 20 points ");
+         System.out.println("4 in a row straight = 30 points ");
+         System.out.println("5 in a row straight = 40 points ");
+         System.out.println("Full house = 25 points ");
+         System.out.println("Yahtzee = 100 points ");
+         System.out.println("Chance(when you have none of the above) = add up the dice and score that many points ");
+         
+         System.out.println("Enter the amount of points you scored ");
+         int firstScore = in.nextInt();
+         
+         
+         System.out.println("You currently have "  +  firstScore  +  " points. ");
+         System.out.println("You get two more games to score more than "  +  (80-firstScore)  +  " points. ");
+         }
+         
+    }
+}
